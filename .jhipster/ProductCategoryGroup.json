@@ -1,0 +1,27 @@
+{
+    "name": "ProductCategoryGroup",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "productCategories",
+            "otherEntityName": "productCategory",
+            "otherEntityRelationshipName": "categoryGroup"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "productType",
+            "otherEntityName": "productType",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180626121653",
+    "entityTableName": "product_category_group",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -38,6 +38,17 @@ public class CacheConfiguration {
             cm.createCache(io.github.jhipster.application.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ProductType.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ProductType.class.getName() + ".categoryGroups", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ProductCategoryGroup.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ProductCategoryGroup.class.getName() + ".productCategories", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ProductCategory.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ProductCategory.class.getName() + ".products", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Product.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Product.class.getName() + ".featuresIncludeds", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Product.class.getName() + ".featuresExcludeds", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.FeatureIncluded.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.FeatureExcluded.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
