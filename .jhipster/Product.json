@@ -1,0 +1,62 @@
+{
+    "name": "Product",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "excessCharge",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "priceMonthly",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "priceYearly",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "introPriceMonthly",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "introMonths",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "defaultTariff",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "featuresIncluded",
+            "otherEntityName": "featureIncluded",
+            "otherEntityRelationshipName": "products"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "featuresExcluded",
+            "otherEntityName": "featureExcluded",
+            "otherEntityRelationshipName": "products"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "productCategory",
+            "otherEntityName": "productCategory",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180626121655",
+    "entityTableName": "product",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

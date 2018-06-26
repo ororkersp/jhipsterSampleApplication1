@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-product-heading">Create or edit a Product</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!product.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="product.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="product.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_excessCharge">Excess Charge</label>
+                    <input type="number" class="form-control" name="excessCharge" id="field_excessCharge"
+                        [(ngModel)]="product.excessCharge" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_priceMonthly">Price Monthly</label>
+                    <input type="number" class="form-control" name="priceMonthly" id="field_priceMonthly"
+                        [(ngModel)]="product.priceMonthly" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_priceYearly">Price Yearly</label>
+                    <input type="number" class="form-control" name="priceYearly" id="field_priceYearly"
+                        [(ngModel)]="product.priceYearly" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_introPriceMonthly">Intro Price Monthly</label>
+                    <input type="number" class="form-control" name="introPriceMonthly" id="field_introPriceMonthly"
+                        [(ngModel)]="product.introPriceMonthly" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_introMonths">Intro Months</label>
+                    <input type="number" class="form-control" name="introMonths" id="field_introMonths"
+                        [(ngModel)]="product.introMonths" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_defaultTariff">Default Tariff</label>
+                    <input type="checkbox" class="form-control" name="defaultTariff" id="field_defaultTariff"
+                        [(ngModel)]="product.defaultTariff" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_productCategory">Product Category</label>
+                    <select class="form-control" id="field_productCategory" name="productCategory" [(ngModel)]="product.productCategory" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productCategoryOption.id === product.productCategory?.id ? product.productCategory : productCategoryOption" *ngFor="let productCategoryOption of productcategories; trackBy: trackProductCategoryById">{{productCategoryOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
